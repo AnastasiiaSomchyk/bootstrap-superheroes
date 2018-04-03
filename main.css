@@ -2,8 +2,11 @@ body {
   background-color: #504a4a;
 }
 
-h2 {
-  color: #ffff;
+h2,
+h1,
+h3,
+p {
+  color: rgb(221, 213, 213);
 }
 
 #work {
@@ -12,7 +15,8 @@ h2 {
   justify-content: center;
 }
 
-.hero {
+.hero,
+.jobs-type {
   margin: 1%;
   padding: 2%;
   width: 400px;
