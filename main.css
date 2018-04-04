@@ -37,8 +37,17 @@ p {
   border: solid 1px white;
   text-align: center;
   height: 450px;
+  overflow: scroll;
 }
 
 .charImage {
   border-radius: 100%;
+}
+
+.maleImage {
+  border: solid 3px #518cca;
+}
+
+.fmaleImage {
+  border: solid 3px rgb(238, 52, 176);
 }
