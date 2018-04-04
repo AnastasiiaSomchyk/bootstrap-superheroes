@@ -1,19 +1,19 @@
-console.log("jobs");
+console.log("superheroes");
 
 const printToDom = (domString, divId) => {
   document.getElementById(divId).innerHTML = domString;
 };
 
-const buildDomString = jobsArray => {
+const buildDomString = heroesArray => {
   let domString = "";
-  jobsArray.forEach(job => {
-    domString += `<div class="jobs-type">`;
+  heroesArray.forEach(superhero => {
+    domString += `<li>
+          <a href="#">${superhero.name}</a>
 
-    domString += `<h1>${job.title}</h1>`;
-
-    domString += `</div>`;
+    </li>
+`;
   });
-  printToDom(domString, "work");
+  printToDom(domString, "awesome-dropdown");
 };
 
 function executeThisCodeIfXHRFails() {
@@ -23,14 +23,14 @@ function executeThisCodeIfXHRFails() {
 function executeThisCodeAfterFileLoaded() {
   const data = JSON.parse(this.responseText);
 
-  buildDomString(data.jobs); // BUILD YOUR DOMSTRING HERE
+  buildDomString(data.superheroes); // BUILD YOUR DOMSTRING HERE
 }
 
 const startApplication = () => {
   var myRequest = new XMLHttpRequest();
   myRequest.addEventListener("load", executeThisCodeAfterFileLoaded);
   myRequest.addEventListener("error", executeThisCodeIfXHRFails);
-  myRequest.open("GET", "../db/jobs.json");
+  myRequest.open("GET", "../db/superheroes.json");
   myRequest.send();
 };
 startApplication();
